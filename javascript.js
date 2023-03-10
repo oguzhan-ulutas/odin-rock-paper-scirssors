@@ -1,26 +1,26 @@
 // Gets the computer choice
 
 function getComputerChoice () {
-    let compGuess = Math.random();
+    let computerChoise = Math.random();
     
-    if (compGuess <= 0.33) {
-        compGuess = "rock";
-    } else if (0.33 < compGuess && compGuess <= 0.66) {
-        compGuess = "paper";
+    if (computerChoise <= 0.33) {
+        computerChoise = "rock";
+    } else if (0.33 < computerChoise && computerChoise <= 0.66) {
+        computerChoise = "paper";
     } else {
-        compGuess = "scissors";
+        computerChoise = "scissors";
     }
     
-    return compGuess;
+    return computerChoise;
 }
 
-// Check getComputerChoice
-console.log(getComputerChoice())
+// // Check getComputerChoice
+// console.log(getComputerChoice())
 
 // A round game
 
 function playRound (playerSelection, computerSelection) {
-    let result
+    let result;
 
     if (computerSelection == playerSelection.toLowerCase()) {
         result = "tie";
@@ -43,7 +43,42 @@ function playRound (playerSelection, computerSelection) {
     return result;
 }
 
-// Check playRound
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+// // Check playRound
+// const playerSelection = "rock";
+// const computerSelection = getComputerChoice();
+// console.log(playRound(playerSelection, computerSelection));
+
+function game() {
+    
+    let playerScore = 0;
+    let computerScore = 0;
+
+    for (let i = 0; i < 5; i++) {
+        let computerSelection = getComputerChoice();
+        let playerSelection = prompt();
+        let result = playRound(playerSelection, computerSelection);
+        
+        console.log(result);
+
+       
+        if (result == "you win") {
+            playerScore += 1;
+        } else if (result == "you lose") {
+            computerScore += 1;
+        }
+
+        let score = `You - ${playerScore} ||  Computer- ${computerScore}`;
+
+        console.log(score);
+     }
+
+     if (playerScore > computerScore) {
+        console.log("End of the game. You win!!!");
+     } else if (playerScore == computerScore) {
+        console.log("End of the game. Tie");
+     } else {
+        console.log("End of the game. You lose!!!");
+     }
+}
+
+console.log(game())
