@@ -1,17 +1,17 @@
 // Gets the computer choice
 
 function getComputerChoice () {
-    let computerChoise = Math.random();
+    let computerChoice = Math.random();
     
-    if (computerChoise <= 0.33) {
-        computerChoise = "rock";
-    } else if (0.33 < computerChoise && computerChoise <= 0.66) {
-        computerChoise = "paper";
+    if (computerChoice <= 0.33) {
+        computerChoice = "rock";
+    } else if (0.33 < computerChoice && computerChoice <= 0.66) {
+        computerChoice = "paper";
     } else {
-        computerChoise = "scissors";
+        computerChoice = "scissors";
     }
     
-    return computerChoise;
+    return computerChoice;
 };
 
 // // Check getComputerChoice
