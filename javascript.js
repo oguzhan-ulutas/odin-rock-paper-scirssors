@@ -22,19 +22,19 @@ function getComputerChoice () {
 function playRound (playerSelection, computerSelection) {
     let result;
 
-    if (computerSelection == playerSelection.toLowerCase()) {
+    if (computerSelection == playerSelection) {
         result = "tie";
-    } else if (computerSelection == "rock" && playerSelection.toLowerCase() == "paper") {
+    } else if (computerSelection == "rock" && playerSelection == "paper") {
         result = "you win";
-    } else if (computerSelection == "rock" && playerSelection.toLowerCase() == "scissors") {
+    } else if (computerSelection == "rock" && playerSelection == "scissors") {
         result = "you lose";
-    } else if (computerSelection == "paper" && playerSelection.toLowerCase() == "rock") {
+    } else if (computerSelection == "paper" && playerSelection == "rock") {
         result = "you lose";
-    } else if (computerSelection == "paper" && playerSelection.toLowerCase() == "scissors") {
+    } else if (computerSelection == "paper" && playerSelection == "scissors") {
         result = "you win";
-    } else if (computerSelection == "scissors" && playerSelection.toLowerCase() == "rock") {
+    } else if (computerSelection == "scissors" && playerSelection == "rock") {
         result = "you win";
-    } else if (computerSelection == "scissors" && playerSelection.toLowerCase() == "paper") {
+    } else if (computerSelection == "scissors" && playerSelection == "paper") {
         result = "you lose";
     } else {
         result = "wrong input";
@@ -43,19 +43,17 @@ function playRound (playerSelection, computerSelection) {
     return result;
 };
 
-// // Check playRound
-// const playerSelection = "rock";
-// const computerSelection = getComputerChoice();
-// console.log(playRound(playerSelection, computerSelection));
-
 function game() {
     
     let playerScore = 0;
     let computerScore = 0;
 
-    for (let i = 0; i < 1; i++) {
+    for (let i = 0; i < 2; i++) {
         let computerSelection = getComputerChoice();
-        let playerSelection = prompt();
+        let playerSelection
+       
+        console.log(playerSelection);
+
         let result = playRound(playerSelection, computerSelection);
         
         console.log(result);
@@ -79,6 +77,17 @@ function game() {
      } else {
         console.log("End of the game. You lose!!!");
      };
-}
+};
 
-console.log(game());
+const buttons = document.querySelectorAll('.buttons');
+buttons.forEach((button) => {
+    button.addEventListener("click", function (e) {
+        let playerSelection = e.target.classList[0];
+        let computerSelection = getComputerChoice();
+        let score = `You - ${playerScore} ||  Computer- ${computerScore}`;
+        // Manupilating DOM for new results
+        const div = document.createElement("div");
+
+    });
+});
+

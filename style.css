@@ -24,7 +24,9 @@ body {
     font-size: 36px;
 }
 
-.button {
+.rock,
+.paper,
+.scissors {
     font-size: 32px;
     border-radius: 8px;
     width: 150px;
@@ -35,7 +37,9 @@ body {
     transition-duration: 0.4s;
 }
 
-.button:hover {
+.rock:hover,
+.paper:hover,
+.scissors:hover {
     background-color: #4CAF50; /* Green */
     color: white;
   }
