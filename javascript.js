@@ -79,15 +79,60 @@ function game() {
      };
 };
 
+let playerScore = 0;
+let computerScore = 0;
+
 const buttons = document.querySelectorAll('.buttons');
 buttons.forEach((button) => {
+
     button.addEventListener("click", function (e) {
         let playerSelection = e.target.classList[0];
         let computerSelection = getComputerChoice();
+        let result = playRound(playerSelection, computerSelection);
+        
+        // Add to DOM
+        const userCommunication = document.querySelector(".userCommunication");
+        const pSelections = document.createElement("p");
+        pSelections.textContent = `Your selection: ${playerSelection} ||  Computer selection: ${computerSelection}`;
+        userCommunication.appendChild(pSelections);
+
+
+        if (result == "you win") {
+            playerScore += 1;
+        } else if (result == "you lose") {
+            computerScore += 1;
+        };
+
         let score = `You - ${playerScore} ||  Computer- ${computerScore}`;
-        // Manupilating DOM for new results
-        const div = document.createElement("div");
+        const pScore = document.createElement("p");
+        pScore.textContent = score;
+        userCommunication.appendChild(pScore);
+
+        sum = playerScore + computerScore
+
+        if (sum == 5) {
+            document.querySelector(".rock").disabled = true;
+            document.querySelector(".paper").disabled = true;
+            document.querySelector(".scissors").disabled = true;
+            
+            const pResult = document.createElement("p");
+            
+            if (playerScore > computerScore) {
+                pResult.textContent = "End of the game. You win!!! Refresh page to play again.";
+             } else if (playerScore == computerScore) {
+                pResult.textContent = "End of the game. Tie. Refresh page to play again.";
+             } else {
+                pResult.textContent = "End of the game. You lose!!! Refresh page to play again.";
+             };
+            
+            userCommunication.appendChild(pResult);
+            
+            
+
+        };
+
 
     });
+    
 });
 
