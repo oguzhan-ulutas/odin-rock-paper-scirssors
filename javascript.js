@@ -12,7 +12,7 @@ function getComputerChoice () {
     }
     
     return computerChoise;
-}
+};
 
 // // Check getComputerChoice
 // console.log(getComputerChoice())
@@ -38,10 +38,10 @@ function playRound (playerSelection, computerSelection) {
         result = "you lose";
     } else {
         result = "wrong input";
-    }
+    };
 
     return result;
-}
+};
 
 // // Check playRound
 // const playerSelection = "rock";
@@ -53,7 +53,7 @@ function game() {
     let playerScore = 0;
     let computerScore = 0;
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 1; i++) {
         let computerSelection = getComputerChoice();
         let playerSelection = prompt();
         let result = playRound(playerSelection, computerSelection);
@@ -78,7 +78,7 @@ function game() {
         console.log("End of the game. Tie");
      } else {
         console.log("End of the game. You lose!!!");
-     }
+     };
 }
 
-console.log(game())
+console.log(game());

@@ -1,0 +1,41 @@
+body {
+    font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    background-color: #EBC97A;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.headers {
+    color: #C44141;
+    text-align: center;
+    flex-basis: 400px;
+}
+
+.header1 {
+    font-size: 64px;
+}
+
+.header2 {
+    font-size: 36px;
+}
+
+.button {
+    font-size: 32px;
+    border-radius: 8px;
+    width: 150px;
+    height: 100px;
+    text-align: center;
+    background-color: #41945F;
+    margin: 8px;
+    transition-duration: 0.4s;
+}
+
+.button:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
