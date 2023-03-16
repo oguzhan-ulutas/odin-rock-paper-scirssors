@@ -43,3 +43,8 @@ body {
     background-color: #4CAF50; /* Green */
     color: white;
   }
+
+.userCommunication {
+    font-size: 12px;
+    text-align: center;
+}

@@ -43,41 +43,41 @@ function playRound (playerSelection, computerSelection) {
     return result;
 };
 
-function game() {
+// function game() {
     
-    let playerScore = 0;
-    let computerScore = 0;
+//     let playerScore = 0;
+//     let computerScore = 0;
 
-    for (let i = 0; i < 2; i++) {
-        let computerSelection = getComputerChoice();
-        let playerSelection
+//     for (let i = 0; i < 2; i++) {
+//         let computerSelection = getComputerChoice();
+//         let playerSelection
        
-        console.log(playerSelection);
+//         console.log(playerSelection);
 
-        let result = playRound(playerSelection, computerSelection);
+//         let result = playRound(playerSelection, computerSelection);
         
-        console.log(result);
+//         console.log(result);
 
        
-        if (result == "you win") {
-            playerScore += 1;
-        } else if (result == "you lose") {
-            computerScore += 1;
-        }
+//         if (result == "you win") {
+//             playerScore += 1;
+//         } else if (result == "you lose") {
+//             computerScore += 1;
+//         }
 
-        let score = `You - ${playerScore} ||  Computer- ${computerScore}`;
+//         let score = `You - ${playerScore} ||  Computer- ${computerScore}`;
 
-        console.log(score);
-     }
+//         console.log(score);
+//      }
 
-     if (playerScore > computerScore) {
-        console.log("End of the game. You win!!!");
-     } else if (playerScore == computerScore) {
-        console.log("End of the game. Tie");
-     } else {
-        console.log("End of the game. You lose!!!");
-     };
-};
+//      if (playerScore > computerScore) {
+//         console.log("End of the game. You win!!!");
+//      } else if (playerScore == computerScore) {
+//         console.log("End of the game. Tie");
+//      } else {
+//         console.log("End of the game. You lose!!!");
+//      };
+// };
 
 let playerScore = 0;
 let computerScore = 0;
@@ -86,7 +86,7 @@ const buttons = document.querySelectorAll('.buttons');
 buttons.forEach((button) => {
 
     button.addEventListener("click", function (e) {
-        let playerSelection = e.target.classList[0];
+        let playerSelection = e.target.className;
         let computerSelection = getComputerChoice();
         let result = playRound(playerSelection, computerSelection);
         
@@ -108,14 +108,15 @@ buttons.forEach((button) => {
         pScore.textContent = score;
         userCommunication.appendChild(pScore);
 
-        sum = playerScore + computerScore
+        let sum = playerScore + computerScore
 
         if (sum == 5) {
             document.querySelector(".rock").disabled = true;
             document.querySelector(".paper").disabled = true;
             document.querySelector(".scissors").disabled = true;
-            
+
             const pResult = document.createElement("p");
+            pResult.setAttribute("style", "color: #C44141; font-size: 16px;")
             
             if (playerScore > computerScore) {
                 pResult.textContent = "End of the game. You win!!! Refresh page to play again.";
