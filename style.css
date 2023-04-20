@@ -1,50 +1,50 @@
 body {
-    font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif;
-    margin: 0;
-    min-height: 100vh;
-    background-color: #EBC97A;
+  font-family: Roboto, Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  background-color: #ebc97a;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .headers {
-    color: #C44141;
-    text-align: center;
-    flex-basis: 200px;
+  color: #c44141;
+  text-align: center;
+  flex-basis: 200px;
 }
 
 .header1 {
-    font-size: 64px;
+  font-size: 64px;
 }
 
 .header2 {
-    font-size: 36px;
+  font-size: 36px;
 }
 
 .rock,
 .paper,
 .scissors {
-    font-size: 32px;
-    border-radius: 8px;
-    width: 150px;
-    height: 100px;
-    text-align: center;
-    background-color: #41945F;
-    margin: 8px;
-    transition-duration: 0.4s;
+  font-size: 32px;
+  border-radius: 8px;
+  width: 150px;
+  height: 100px;
+  text-align: center;
+  background-color: #41945f;
+  margin: 8px;
+  transition-duration: 0.4s;
 }
 
 .rock:hover,
 .paper:hover,
 .scissors:hover {
-    background-color: #4CAF50; /* Green */
-    color: white;
-  }
+  background-color: #4caf50; /* Green */
+  color: white;
+}
 
 .userCommunication {
-    font-size: 12px;
-    text-align: center;
+  font-size: 12px;
+  text-align: center;
 }
